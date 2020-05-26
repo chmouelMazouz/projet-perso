@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FrontController!{% endblock %}
+
+{% block body %}
+    <!-- SLIDER -->
+    <section id="homeslider-wrap" class="v2 flexslider screen-adapter">
+        <!-- SLIDER TITLE WRAPPER -->
+        <div class="container vertical-center">
+            <div class="row">
+                <!-- SLIDER TITLE -->
+                <div class="col-md-offset-3 col-md-6 carousel-caption animated-element-1 delay1">
+                    <h1>HANNA<span class="logo-slider"> &amp; </span>CHMOUEL</h1>
+                    <h2 class="margin">Notre Mariage</h2>
+                </div>
+                <!-- END SLIDER TITLE -->
+            </div>
+        </div>
+        <!-- END SLIDER TITLE WRAPPER -->
+
+        <!-- SLIDER IMAGES -->
+        <ul class="slides animated fadeIn">
+            <li class="homesliderimage" style="background-image:url({{ asset('images/2000x1200.jpg') }});"> </li>
+            <li class="homesliderimage" style="background-image:url({{ asset('images/2000x1200.jpg') }});"> </li>
+        </ul>
+        <!-- END SLIDER IMAGES -->
+    </section>
+    <!-- COUPLE SECTION HEADER -->
+    <section id="couple-header">
+        <div class="container">
+            <div class="text-center">
+                <!-- ICON IMAGE -->
+                <img  src="{{ asset ('images/icon.png') }}" alt="icon" class="img-responsive center-block img-headline-v2">
+                <!-- TITLE -->
+                <h2 class="headline-v2">Notre<span class="visible-xs"><br></span> mariage</h2>
+                <!-- TEXT INFO -->
+                <p class="subtitle">
+                    Bienvenue sur le site de notre mariage ! <span class="visible-xs"><br>Nous serions honnorés de votre présence.</span>
+                    <span class="hidden-xs"><br>N'attendez plus pour confirmer votre présence SVP </span>
+                </p>
+                <!-- END TEXT INFO -->
+            </div>
+        </div>
+    </section>
+    <!-- END COUPLE SECTION HEADER -->
+    <!-- END SLIDER-->
+{% endblock %}

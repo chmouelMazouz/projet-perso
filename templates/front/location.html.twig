@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FrontController!{% endblock %}
+
+{% block body %}
+    <!-- LOCATION SECTION -->
+    <section id="location" class="v2 background-cover" style="background-image: url('{{ asset('images/2000x1300.jpg') }}');" >
+        <div class="container">
+            <div class="row">
+                <!-- TITLE -->
+                <div class="col-xs-12 main-ceremony text-center">
+                    <h1 class="animated-element-3 delay1">LA CEREMONIE</h1>
+                    <h2 class="animated-element-4 delay2">Religieuse</h2>
+                </div>
+                <!-- END TITLE -->
+
+                <!-- LOCATION BOX -->
+                <div class="col-xs-12 col-sm-4">
+                    <!-- LOCATION WRAPPER -->
+                    <div class="span-wrapper-transparent">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <h4>Lieu</h4>
+
+                        <span>
+                                39 rue Jaurès <br>
+                                75016 Paris
+                            </span>
+                    </div>
+                    <!-- END LOCATION WRAPPER -->
+                </div>
+                <!-- END LOCATION BOX -->
+
+                <!-- DATE BOX -->
+                <div class="col-xs-12 col-sm-4">
+                    <!-- DATE WRAPPER -->
+                    <div class="span-wrapper-transparent">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        <h4>La date</h4>
+                        <span>
+                                Celebration le Lundi<br> 18 mai 2020
+                            </span>
+                    </div>
+                    <!-- END DATE WRAPPER -->
+                </div>
+                <!-- END DATE BOX -->
+
+                <!-- TIMING BOX -->
+                <div class="col-xs-12 col-sm-4">
+                    <!-- TIMING WRAPPER -->
+                    <div class="span-wrapper-transparent">
+                        <i class="glyphicon glyphicon-time"></i>
+                        <h4>Horaire</h4>
+                        <span>
+                                Début: 19h30 <br>Fin: 5:00
+                            </span>
+                    </div>
+                    <!-- TIMING WRAPPER -->
+                </div>
+                <!-- END TIMING BOX -->
+            </div>
+        </div>
+    </section>
+    <!-- END LOCATION SECTION -->
+    <!--CONTENT SECTION-->
+    <section id="wedding-content">
+        <div class="container">
+            <div class="row">
+                <!-- RECEPTION WRAPPER -->
+                <div class="col-md-offset-1 col-md-5 pading-text margin1">
+                    <div  class="animated-element-1">
+                        <!-- RECEPTION HEADER -->
+                        <h3>La Cérémonie religieuse</h3>
+                        <!-- RECEPTION TEXT INFO-->
+                        <p>
+                            La cérémonie religieuse aura lieu dans les jardins du Belvédère. C'est un lieux charmant qui offre un cable paisible et romantique.
+                        </p>
+                        <img src="{{ asset('images/480x320.jpg') }}" alt="480x320" class="img-responsive center-block fl-wd">
+                    </div>
+                </div>
+                <!-- END RECEPTION WRAPPER -->
+
+                <!-- WEDDING PARTY WRAPPER -->
+                <div class="col-md-5 pading-text margin4">
+                    <div  class="animated-element-1">
+                        <!-- RECEPTION HEADER -->
+                        <h3>La réception</h3>
+                        <!-- RECEPTION TEXT INFO-->
+                        <p>
+                            Une réception suivra la cérémonie religieuse. Repas, danse, musique, discours et chéva brahot au menu.
+                            On compte sur vous pour mettre le feu !
+                        </p>
+                        <img src="{{ asset('images/480x320.jpg') }}" alt="480x320" class="img-responsive center-block fl-wd">
+                    </div>
+                </div>
+                <!-- END WEDDING PARTY WRAPPER -->
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT SECTION-->
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

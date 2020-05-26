@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+    <section id="reserve-image" class="v2 background-cover"  style="background-image: url('{{ asset('images/108.jpg')}}');" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- MAIN TITLE WRAPPER -->
+                    <div class="about-section-wraper text-center animated-element-1 delay1">
+                        <h2>Les réservations</h2>
+                    </div>
+                    <!-- END MAIN TITLE WRAPPER -->
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="container mt-5">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="bg-success">
+                <th>Id</th>
+                <td>{{ reservation.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ reservation.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ reservation.nom }}</td>
+            </tr>
+            <tr>
+                <th>IsPresent</th>
+                <td>{{ reservation.isPresent ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ reservation.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ reservation.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ reservation.comment }}</td>
+            </tr>
+            <tr>
+                <th>Created_At</th>
+                <td>{{ reservation.createdAt ? reservation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </thead>
+    </table>
+</section>
+    <a href="{{ path('reservation_index') }}">back to list</a>
+
+    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
+
+    {{ include('reservation/_delete_form.html.twig') }}
+{% endblock %}

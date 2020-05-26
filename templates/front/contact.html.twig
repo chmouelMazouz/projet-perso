@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demande de contact{% endblock %}
+
+{% block body %}
+<!-- SUSCRIBE TITLE SECTION -->
+<section id="reserve-image" class="v2 background-cover"  style="background-image: url('{{ asset('images/108.jpg')}}');" >
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- MAIN TITLE WRAPPER -->
+                <div class="about-section-wraper text-center animated-element-1 delay1">
+                    <h1>Contact</h1>
+                    <h2>Contactez nous</h2>
+                </div>
+                <!-- END MAIN TITLE WRAPPER -->
+            </div>
+        </div>
+    </div>
+</section>
+<section id="reserve-form">
+    <div class="container">
+        <div class="row">
+            <!-- SUSCRIBE FORM OUTER WRAPPER -->
+            <div class="col-lg-10 col-lg-offset-1">
+                <!-- SUSCRIBE FORM INNER WRAPPER -->
+                <div class="block-box-rsrv">
+                    {% for message in app.flashes('notice') %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+
+                    {% endfor %}
+                    <!-- SUSCRIBE FORM -->
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <div class="col-sm-12  text-center">
+                        <div id="success">
+                            <button id="submit" type="submit" name="submit" class="btn btn-medium-rsvp btn-block">Envoyer ma demande <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

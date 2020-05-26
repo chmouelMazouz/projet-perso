@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block stylesheets %}
+    <style>
+        #reserve-image .about-section-wraper {
+            padding-top: 200px !important;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section id="reserve-image" class="v2"  style="background-image: url('{{ asset('images/banner.jpg')}}'); background-repeat: no-repeat;background-size: cover" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- MAIN TITLE WRAPPER -->
+                    <div class="about-section-wraper text-center">
+                        <h2>Se connecter</h2>
+                    </div>
+                    <!-- END MAIN TITLE WRAPPER -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reserve-form">
+        <div class="container">
+            <div class="row">
+                <!-- SUSCRIBE FORM OUTER WRAPPER -->
+                <div class="col-lg-10 col-lg-offset-1">
+                    <!-- SUSCRIBE FORM INNER WRAPPER -->
+                    <div class="block-box-rsrv">
+                        <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {% if app.user %}
+                            <div class="mb-3">
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            </div>
+                        {% endif %}
+
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                        <label for="inputEmail">Email</label>
+                                    </div>
+                                    <div class="col-sm-5">
+                                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus><br />
+                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                        <label for="inputPassword">Password</label>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="password" name="password" id="inputPassword" class="form-control" required><br />
+                                    </div>
+                                </div>
+                            </div>
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}"
+                        >
+
+                        {#
+                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                            See https://symfony.com/doc/current/security/remember_me.html
+
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> Remember me
+                                </label>
+                            </div>
+                        #}
+
+                            <button class="btn btn-lg btn-primary" type="submit">
+                                Sign in
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

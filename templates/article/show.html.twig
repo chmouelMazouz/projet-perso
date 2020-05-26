@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <section id="blog-header">
+        <div class="container">
+            <div class="row">
+                <!--- BLOG TITLE WRAPPER -->
+                <div class="col-md-12 text-center">
+                    <!-- TITLE -->
+                    <h1 class="headline">What's up</h1>
+                    <!-- SPACER -->
+                    <hr class="spacer">
+                    <!-- TEXT INFO -->
+                    <p class="subtitle">
+                        30 juin 2020 by Hanna & Chmouel
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="about-content-single-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 blog-image img-responsive center-block animated-element-1 margin-single-post">
+                <img class="img-responsive center-block" alt="500x500" src="{{ asset('images/1300x800.jpg') }}" data-holder-rendered="true">
+            </div>
+            <tbody>
+
+                    {#<tr>
+                        <th>Id</th>
+                        <td>{{ article.id }}</td>
+                    </tr>#}
+                    {#<tr>
+                        <th>Titre</th>
+                        <td>{{ article.titre }}</td>
+                    </tr>#}
+                    <tr>
+                        <table class="table">
+                        {#<th>Contenu</th>#}
+                            <td>{{ article.contenu }}</td>
+                        </table>
+                    </tr>
+                    <tr>
+                        <th>Create_At</th>
+                        <td>{{ article.createAt ? article.createAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    <a href="{{ path('article_index') }}">back to list</a>
+
+    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+
+    {{ include('article/_delete_form.html.twig') }}
+{% endblock %}

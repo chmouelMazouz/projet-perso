@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Reservation{% endblock %}
+
+{% block body %}
+<section id="reserve-image" class="v2 background-cover"  style="background-image: url('{{ asset('images/108.jpg')}}');" >
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- MAIN TITLE WRAPPER -->
+                <div class="about-section-wraper text-center animated-element-1 delay1">
+                    <h2>Modifier une réservation</h2>
+                </div>
+                <!-- END MAIN TITLE WRAPPER -->
+            </div>
+        </div>
+    </div>
+</section>
+<section id="reserve-form">
+    <div class="container">
+        <div class="row">
+            <!-- SUSCRIBE FORM OUTER WRAPPER -->
+            <div class="col-lg-10 col-lg-offset-1">
+                <!-- SUSCRIBE FORM INNER WRAPPER -->
+                <div class="block-box-rsrv">
+                    <!-- SUSCRIBE FORM -->
+                    {{ form_start(form) }}
+                    <div class="controls">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_widget(form.prenom, { 'attr': {'class': 'form-control'} } ) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} } ) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_widget(form.email, { 'attr': {'class': 'form-control'} } ) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_widget(form.telephone, { 'attr': {'class': 'form-control'} } ) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                {{ form_widget(form.isPresent) }} <span>Je serai présent</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                {{ form_widget(form.comment, { 'attr': {'class': 'form-control'} } ) }}
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-sm-12  text-center">
+                            <div id="edit">
+                                <button id="submit" type="submit" name="submit" class="btn btn-medium-rsvp btn-block">Modifier <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</section>
+    <a href="{{ path('reservation_index') }}">back to list</a>
+
+    {{ include('reservation/_delete_form.html.twig') }}
+{% endblock %}

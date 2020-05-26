@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Reservation{% endblock %}
+
+{% block body %}
+    <!-- SUSCRIBE TITLE SECTION -->
+    <section id="reserve-image" class="v2 background-cover"  style="background-image: url('{{ asset('images/108.jpg')}}');" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- MAIN TITLE WRAPPER -->
+                    <div class="about-section-wraper text-center animated-element-1 delay1">
+                        <h1>RSVP</h1>
+                        <h2>Reserver maintenant</h2>
+                    </div>
+                    <!-- END MAIN TITLE WRAPPER -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reserve-form">
+        <div class="container">
+            <div class="row">
+                <!-- SUSCRIBE FORM OUTER WRAPPER -->
+                <div class="col-lg-10 col-lg-offset-1">
+                    <!-- SUSCRIBE FORM INNER WRAPPER -->
+                    <div class="block-box-rsrv">
+                        <!-- SUSCRIBE FORM -->
+                        {{ form_start(form) }}
+                        <div class="controls">
+                            <div class="row text-left">
+                                <div class="col-sm-12">
+                                    <div class="rsrv-section-wraper text-center">
+                                        <!-- TITLE -->
+                                        <h1>Formulaire de réservation</h1>
+                                        <p class="title">Réserver avant le 16 décembre 2020</p>
+                                        <p class="">
+                                            Nous sommes heureux que vous puissiez participer à notre joie ! Ne tardez plus pour nous faire part de votre présence.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="prenom">Votre prénom</label>
+                                        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control'} } ) }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="prenom">Votre nom</label>
+                                        {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} } ) }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="prenom">Votre email</label>
+                                        {{ form_widget(form.email, { 'attr': {'class': 'form-control'} } ) }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="prenom">Téléphone</label>
+                                        {{ form_widget(form.telephone, { 'attr': {'class': 'form-control'} } ) }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        {{ form_widget(form.isPresent) }} <span>Je serai présent</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="prenom">Commentaire</label>
+                                        {{ form_widget(form.comment, { 'attr': {'class': 'form-control'} } ) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12  text-center">
+                            <div id="success">
+                                <button id="submit" type="submit" name="submit" class="btn btn-medium-rsvp btn-block">Confirmation <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                        <!-- END SUSCRIBE FORM -->
+                    </div>
+                    <!-- END SUSCRIBE FORM INNER WRAPPER -->
+                </div>
+                <!-- END SUSCRIBE FORM OUTER WRAPER -->
+            </div>
+        </div>
+    </section>
+    <!-- END SUSCRIBE FORM SECTION -->
+
+{% endblock %}
